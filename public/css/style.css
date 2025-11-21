@@ -1,98 +1,184 @@
+/* GLOBAL */
 body {
     height: 100%;
     margin: 0;
     padding: 0;
     font-family: "Plus Jakarta Sans", sans-serif !important;
-  }
-  .wrapper {
+}
+
+.wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-  }
- .container{
-    flex:1;
- }
-  .navbar {
-     height : 5rem;
-     background-color:white;
-  }
-  .fa-compass {
-     color : #fe424d;
-     font-size : 2rem;
-  }
-  .nav-link {
-     color : #222222 !important;
-  }
-  .f-info-links a{
-     text-decoration : none;
-     color: #222222;
-  }
-  .f-info-links a:hover{
-     text-decoration : underline;
-  }
-  .f-info-links, .f-info-socials, .f-info-brand {
-    width : 100%;
-  }
-  .f-info-socials i{
-    margin-right : 1rem;
-    font-size : 1.2rem;
-  }
-  .f-info {
-    margin-top: auto;
-    height: 8rem;
+}
+
+.container {
+    flex: 1;  /* pushes footer down */
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0 15px;
+}
+
+/* NAVBAR */
+.navbar {
+    height: 5rem;
+    background-color: white;
+}
+
+.fa-compass {
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+
+/* FOOTER */
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+}
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+    width: 100%;
+}
+.f-info-socials i {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+.f-info {
+    height: auto;
+    padding: 1rem 0;
     background-color: #ebebeb;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
     text-align: center;
-  }
-  /*cards*/
-  .listing-card{
-    border : none !important;
-    margin-bottom : 2rem;
-  }
-  .card-img-top{
-    border-radius : 1rem !important;
-    width : 100% !important;
-    object-fit : cover !important;
-  }
-  .card-body {
-    padding : 0 !important;
-  }
-  .card-text p {
-    font-weight : 400 !important;
-  }
-  .listing-link{
-    text-decoration : none;
-  }
-  /*card effect*/
-  .card-img-overlay {
-    opacity:0;
-  }
-  .card-img-overlay:hover{
-    opacity : 0.2;
+}
+
+/* CARDS */
+.listing-card {
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card-text p {
+    font-weight: 400 !important;
+}
+
+.listing-link {
+    text-decoration: none;
+}
+
+/* CARD HOVER EFFECT */
+.card-img-overlay {
+    opacity: 0;
+}
+.card-img-overlay:hover {
+    opacity: 0.2;
     background-color: white;
-  }
-  /*New Page styling*/
-  .add-btn {
-    background-color :  #fe424d ! important;
-    border : none !important;
-  }
- /*Edit*/
-   .edit-btn{
-    background-color : #fe424d ! important;
-    border : none !important;
-  }
-  /*Show Page*/
-  .show-img{
+}
+
+/* BUTTONS */
+.add-btn,
+.edit-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/* SHOW PAGE */
+.show-img {
+    width: 100%;
     height: 30vh;
-  }
-  .btns{
-    display:flex;
-  }
-  .show-card {
-    padding-left : 0;
+    object-fit: cover;
+}
+
+.btns {
+    display: flex;
+    gap: 1rem;
+}
+
+.show-card {
+    padding-left: 0;
     padding-right: 0;
+}
+
+/* MAP */
+#map {
+    height: 400px;
+    width: 100%;      /* FIXED: Full responsive width */
+    max-width: 600px; /* Prevents from becoming too large */
+    margin: auto;
+}
+
+/* MAP MARKER */
+.custom-marker {
+    filter: invert(20%) sepia(100%) saturate(7000%) hue-rotate(-5deg) brightness(90%) contrast(120%);
+}
+
+/* RESPONSIVE DESIGN */
+
+/* 🔹 Navbar responsive code */
+.mobile-search-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .search-form {
+    display: none;
   }
- 
+
+  .mobile-search-toggle {
+    display: block;
+    font-size: 1.6rem;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  .mobile-search-box {
+    display: none;
+    padding: 10px;
+  }
+}
+
+
+/* 📱 Tablets (600px - 768px) */
+@media (max-width: 768px) {
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .navbar {
+    height: auto;
+  }
+
+  #map {
+    height: 300px;
+    width: 100%;
+  }
+
+  .show-img {
+    height: 28vh;
+  }
+
+}
